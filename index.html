@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haripriya portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- CSS -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Smooth scrolling for links
+        const links = document.querySelectorAll("a[href^='#']");
+        links.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute("href"));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        // Dynamic hover effects
+        const hoverElements = document.querySelectorAll(".hover, .hover1, .hover2, .hover3, .hover4");
+        hoverElements.forEach(element => {
+            element.addEventListener("mouseover", () => {
+                element.style.transition = "all 0.3s ease-in-out";
+            });
+
+            element.addEventListener("mouseout", () => {
+                element.style.transition = "all 0.3s ease-in-out";
+            });
+        });
+
+        // Automatic carousel sliding
+        const carousel = document.querySelector(".carousel");
+        if (carousel) {
+            const interval = setInterval(() => {
+                const nextButton = carousel.querySelector(".carousel-control-next");
+                if (nextButton) {
+                    nextButton.click();
+                }
+            }, 3000);
+        }
+
+        // Display "Anusaya" with typing effect
+        const typingText = "Hi, I'm Haripriya M!";
+        const bannerElement = document.querySelector(".banner h1"); // Adjust this selector based on your banner heading
+        let currentIndex = 0;
+
+        if (bannerElement) {
+            const typeEffect = () => {
+                if (currentIndex < typingText.length) {
+                    bannerElement.textContent += typingText[currentIndex];
+                    currentIndex++;
+                    setTimeout(typeEffect, 150); // Adjust typing speed here
+                }
+            };
+
+            bannerElement.textContent = ""; // Clear any initial content
+            typeEffect();
+        }
+
+        // Fade-in effect for about section
+        const aboutSection = document.querySelector("#about");
+        if (aboutSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        aboutSection.style.transition = "opacity 1.5s ease-in-out";
+                        aboutSection.style.opacity = "1";
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            aboutSection.style.opacity = "0"; // Initial hidden state
+            observer.observe(aboutSection);
+        }
+    });
+</script>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary py-3 text-uppercase border-bottom border-light-subtle sticky-top" >
+        <div class="container">
+          <a class="navbar-brand fs-3" href="#">HARIPRIYA M</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
+              <li class="nav-item">
+                <a class="nav-link hover text-center" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link hover text-center" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link hover text-center" href="#skills">Skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link hover text-center" href="#Education">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link hover text-center" href="#Contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a href="./next.html" target="_blank" class="btn btn-sm btn-outline-primary  text-uppercase ">Next →</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Profile -->
+      <section class="banner text-center text-uppercase">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="w-75 m-auto">
+                        <h1 class="pb-3">HI IM HARIPRIYA M</h1>
+                        <h4 class="pb-4">I am a Final year Student at AVS Engineering college , I have skills on  Front-End Development - Flutter - UI/UX design - canva</h4>
+                        <a href="https://wa.me/+919443039674?text= Hi Haripriya..." target="_blank" class="btn btn-dark btn-lg text-uppercase">Contact with me</a>
+                        <div class="pt-4 ">
+                          <a href="https://www.linkedin.com/in/m-haripriya03" class="btn active hover2" target="_blank">Linked In</a>
+                          <a href="https://github.com/Haripriya1411" class="btn active hover2" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h4 class="pb-3 hover text-center">ABOUT ME</h4>
+                    <p class="pb-3">My name is Haripriya, and I am currently in the learning phase of web development. This journey into the world of web development has ignited my passion for creating innovative and functional digital experiences. I am committed to honing my skills in coding languages such as HTML, CSS, and JavaScript, as well as exploring frameworks and libraries like React and Angular. .</p>
+                    <p class="pb-3">Through online courses, tutorials, and hands-on projects, I am dedicated to mastering the intricacies of front-end and back-end development. With each line of code I write, I am driven by a desire to learn, grow, and ultimately contribute meaningfully to the ever-evolving landscape of web development</p>
+                    <div class="pb-4">
+                      <a href="./PortfolioImages/Haripriya resume (1).pdf" target="_blank" class="btn btn-success btn-lg text-uppercase ">CV Resume</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="./PortfolioImages/hppic.jpg" height="500" width="290" alt="Haripriya" >
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+       <section id="skills" class="bg-light skills-padding p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-center pb-4 hover text-center">SKILLS</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 pb-4">
+                    <div class="card text-center">
+                        <img src="./PortfolioImages/Front-end-Development.jpeg" class="card-img-top w-75 m-auto pt-4" alt="Front-end">
+                        <div class="card-body hover1">
+                          <h5 class="card-title">Front-End</h5>
+                          <p class="card-text">Developed strong front-end skills through self-learning, mastering HTML, CSS, JavaScript for dynamic web applications.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 pb-4">
+                    <div class="card text-center">
+                        <img src="./PortfolioImages/flutter.jpg" class="card-img-top w-70 m-auto pt-4" alt="React Js">
+                        <div class="card-body hover1">
+                          <h5 class="card-title">Flutter</h5>
+                          <p class="card-text">Flutter is an open-source, multi-platform mobile app development framework created by Google. It allows developers to build natively compiled applications for mobile, web, and desktop from a single codebase.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 pb-4">
+                    <div class="card text-center">
+                        <img src="./PortfolioImages/uiux.jpg" class="card-img-top w-80 m-auto pt-4 pb-2" alt="Java">
+                        <div class="card-body hover1">
+                          <h5 class="card-title">UI/UX design</h5>
+                          <p class="card-text">UI (User Interface)
+                            UI refers to the visual elements and interactions that a user encounters when using a product, system, or service. <br>
+                            UX (User Experience)
+                            UX refers to the overall experience a user has when interacting with a product, system, or service.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 pb-4">
+                    <div class="card text-center">
+                        <img src="./PortfolioImages/git.png" class="card-img-top w-65 m-auto pt-4 pb-2" alt="Video editing">
+                        <div class="card-body hover1">
+                          <h5 class="card-title">Git and GitHub</h5>
+                          <p class="card-text">Git is a version control system that allows developers to track changes in their code. GitHub is a web-based hosting service for git repositories.</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+       </section>
+
+      <!-- Education -->
+      <section id="Education" class="skills-padding p-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="text-center pb-4 hover text-center">EDUCATION</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="py-3" scope="col">S.NO</th>
+                      <th class="py-3" scope="col">Qualification</th>
+                      <th class="py-3" scope="col">University</th>
+                      <th class="py-3" scope="col">Percentage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th class="py-3" scope="row">1</th>
+                      <td>SSLC</td>
+                      <td>St Mary's Girls High Sec School</td>
+                      <td>80%</td>
+                    </tr>
+                    <tr>
+                      <th class="py-3" scope="row">2</th>
+                      <td>HSC</td>
+                      <td>St Mary's Girls High Sec School</td>
+                      <td>84%</td>
+                    </tr>
+                    <tr>
+                      <th class="py-3" scope="row">3</th>
+                      <td>B.E</td>
+                      <td>AVS Engineering College</td>
+                      <td>83%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+       <!-- Contact -->
+        <section id="Contact" class="bg-dark text-white skills-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h4 class="text-center pb-4 hover text-center">CONTACT</h4>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <form>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Mobile</label>
+                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-2">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <p class="text-center m-0">Copyrights: Designed and Developed by Haripriya💗</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+</body>
+
+<!-- BootStrap Script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>
